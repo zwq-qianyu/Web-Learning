@@ -1,0 +1,7 @@
+name,age,salary,lang
+Jack,18.0,8000,Python
+Mary,NaN,7300,Java
+Lily,21.0,11000,python
+Tom,25.0,12000,NaN
+Joe,81.0,-1,NaN
+Jack,18.0,8000,Python
