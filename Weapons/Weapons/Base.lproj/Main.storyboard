@@ -71,11 +71,25 @@
                                                                     <action selector="favBtnTap:" destination="EC6-4o-czW" eventType="touchUpInside" id="l0U-zd-GIi"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhJ-hv-2Yx">
+                                                                <rect key="frame" x="173" y="15" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="NLx-PV-vss"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="e5E-bK-ycL"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                                <state key="normal" image="like"/>
+                                                                <connections>
+                                                                    <action selector="likeBtnTap:" destination="EC6-4o-czW" eventType="touchUpInside" id="Gz2-0y-YzU"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="KhJ-hv-2Yx" secondAttribute="trailing" constant="80" id="5Te-Kg-A0Y"/>
                                                             <constraint firstItem="4wl-Tl-XAt" firstAttribute="leading" secondItem="pvJ-aN-Wy8" secondAttribute="leading" constant="20" id="6V1-q8-rYc"/>
                                                             <constraint firstItem="BdR-yO-nS4" firstAttribute="centerY" secondItem="pvJ-aN-Wy8" secondAttribute="centerY" id="ShT-WD-xrX"/>
                                                             <constraint firstAttribute="trailing" secondItem="BdR-yO-nS4" secondAttribute="trailing" constant="20" id="cp7-57-l3D"/>
+                                                            <constraint firstItem="KhJ-hv-2Yx" firstAttribute="centerY" secondItem="pvJ-aN-Wy8" secondAttribute="centerY" id="wZ7-hK-dyL"/>
                                                             <constraint firstItem="4wl-Tl-XAt" firstAttribute="centerY" secondItem="pvJ-aN-Wy8" secondAttribute="centerY" id="ygC-R4-aoP"/>
                                                         </constraints>
                                                     </view>
@@ -137,6 +151,7 @@
                                 <connections>
                                     <outlet property="backImageView" destination="OFm-n7-dvi" id="ApB-Ad-A0t"/>
                                     <outlet property="favBtn" destination="BdR-yO-nS4" id="CJh-oS-Teg"/>
+                                    <outlet property="likeBtn" destination="KhJ-hv-2Yx" id="caD-En-9kH"/>
                                     <outlet property="originLabel" destination="rSg-ZI-0wC" id="S46-1N-HEc"/>
                                     <outlet property="typeLabel" destination="tpk-iM-lsT" id="eYK-Y6-gSh"/>
                                     <outlet property="weaponLabel" destination="Wlc-3t-9LW" id="lad-ml-RH0"/>
@@ -155,6 +170,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="like" width="16" height="16"/>
         <image name="unfav" width="24" height="24"/>
     </resources>
 </document>
