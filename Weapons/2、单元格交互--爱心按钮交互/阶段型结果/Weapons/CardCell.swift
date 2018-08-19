@@ -14,12 +14,24 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var backImageView: UIImageView!
+    @IBOutlet weak var likeBtn: UIButton!
+    
     var favorite = false {
         willSet{
             if newValue {
                 favBtn.setImage(#imageLiteral(resourceName: "fav"), for: .normal)
             } else {
                 favBtn.setImage(#imageLiteral(resourceName: "unfav"), for: .normal)
+            }
+        }
+    }
+    
+    var likeit = false {
+        willSet {
+            if newValue{
+                likeBtn.setImage(#imageLiteral(resourceName: "like_fill"), for: .normal)
+            } else {
+              likeBtn.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             }
         }
     }

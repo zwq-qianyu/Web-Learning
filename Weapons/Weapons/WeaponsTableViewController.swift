@@ -24,9 +24,59 @@ class WeaponsTableViewController: UITableViewController {
     
     var favorites = Array(repeating: false, count: 11)
     
-    var likes = Array(repeating: false, count: 11)
+    //trailing ... 左滑操作   UIContextualAction、UISwipeActionsConfiguration
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //删除行操作
+        let delAction = UIContextualAction(style: .destructive, title: "delete") { (_, _, completion) in
+            self.weapons.remove(at: indexPath.row)
+            self.weaponType.remove(at: indexPath.row)
+            self.weaponsImages.remove(at: indexPath.row)
+            self.origins.remove(at: indexPath.row)
+            self.favorites.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            completion(true)
+        }
+        
+        //分享一行操作
+        let shareAction = UIContextualAction(style: .normal, title: "share") { (_, _, completion) in
+            let text = "这是绝地求生中的\(self.weapons[indexPath.row])"
+            let image = UIImage(named: self.weaponsImages[indexPath.row])!
+            
+            //调用系统自带的分享功能
+            let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
+            //处理iPad的bug,使得在iPad上直接弹出一个小框即可
+            if let pc = ac.popoverPresentationController{
+                if let cell = tableView.cellForRow(at: indexPath){
+                    pc.sourceView = cell
+                    pc.sourceRect = cell.bounds
+                }
+            }
+            self.present(ac, animated: true)
+            
+            completion(true)
+        }
+        
+        shareAction.backgroundColor = .orange
+        
+        let config = UISwipeActionsConfiguration(actions: [delAction, shareAction])
+        return config
+    }
     
-    
+    //leading ... 右滑操作   UIContextualAction、UISwipeActionsConfiguration
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favAction = UIContextualAction(style: .normal, title: "like") { (_, _, completion) in
+            completion(true)
+        }
+        
+        favAction.image = #imageLiteral(resourceName: "unfav")
+        favAction.backgroundColor = UIColor.purple
+        
+        let config = UISwipeActionsConfiguration(actions: [favAction])
+        return config
+    }
     
     @IBAction func favBtnTap(_ sender: UIButton) {
         let btnPos = sender.convert(CGPoint.zero, to: self.tableView)  //将sender相对自己的位置（0，0）转换成相对于 tableView 的位置
@@ -38,16 +88,6 @@ class WeaponsTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! CardCell
         cell.favorite = self.favorites[indexPath.row]
         
-    }
-    
-    @IBAction func likeBtnTap(_ sender: UIButton) {
-        let btnPos = sender.convert(CGPoint.zero, to: tableView)
-        let indexPath = tableView.indexPathForRow(at: btnPos)!
-        
-        self.likes[indexPath.row] = !self.likes[indexPath.row]
-        
-        let cell = tableView.cellForRow(at: indexPath) as! CardCell
-        cell.likeit = likes[indexPath.row]
     }
     
     override func viewDidLoad() {
@@ -81,7 +121,6 @@ class WeaponsTableViewController: UITableViewController {
         cell.originLabel.text = origins[indexPath.row]
         cell.backImageView.image = UIImage(named: weaponsImages[indexPath.row])
         cell.favorite = favorites[indexPath.row]
-        cell.likeit = likes[indexPath.row]
         
         return cell
     }
@@ -128,7 +167,11 @@ class WeaponsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let row = tableView.indexPathForSelectedRow!.row
+        let destination = segue.destination as! WeaponDetailViewController
+        
+        destination.imageName = weaponsImages[row]
     }
-    */
+     */
 
 }
