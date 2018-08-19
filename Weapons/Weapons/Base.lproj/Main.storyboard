@@ -67,6 +67,9 @@
                                                                     <constraint firstAttribute="height" constant="50" id="w61-0m-NNS"/>
                                                                 </constraints>
                                                                 <state key="normal" image="unfav"/>
+                                                                <connections>
+                                                                    <action selector="favBtnTap:" destination="EC6-4o-czW" eventType="touchUpInside" id="l0U-zd-GIi"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>

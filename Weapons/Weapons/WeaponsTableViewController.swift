@@ -21,6 +21,22 @@ class WeaponsTableViewController: UITableViewController {
         "m16a4","microuzi","pan",
         "sks","ump9"
     ]
+    
+    var favorites = Array(repeating: false, count: 11)
+    
+    
+    @IBAction func favBtnTap(_ sender: UIButton) {
+        let btnPos = sender.convert(CGPoint.zero, to: self.tableView)  //将sender相对自己的位置（0，0）转换成相对于 tableView 的位置
+        print("爱心按钮相对于tableview的位置是：\(btnPos)")
+        let indexPath = tableView.indexPathForRow(at: btnPos)!      //根据相对tableView 的位置，找到 indexpath
+        print("爱心按钮所在的indexpath为：\(indexPath)")
+        self.favorites[indexPath.row] = !self.favorites[indexPath.row]
+        
+        let cell = tableView.cellForRow(at: indexPath) as! CardCell
+        cell.favorite = self.favorites[indexPath.row]
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +67,7 @@ class WeaponsTableViewController: UITableViewController {
         cell.weaponLabel.text = weapons[indexPath.row]
         cell.originLabel.text = origins[indexPath.row]
         cell.backImageView.image = UIImage(named: weaponsImages[indexPath.row])
+        cell.favorite = favorites[indexPath.row]
         
         return cell
     }

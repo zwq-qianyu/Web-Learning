@@ -13,8 +13,17 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var weaponLabel: UILabel!
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var originLabel: UILabel!
-    
     @IBOutlet weak var backImageView: UIImageView!
+    var favorite = false {
+        willSet{
+            if newValue {
+                favBtn.setImage(#imageLiteral(resourceName: "fav"), for: .normal)
+            } else {
+                favBtn.setImage(#imageLiteral(resourceName: "unfav"), for: .normal)
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
