@@ -244,9 +244,9 @@ class WeaponsTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let row = tableView.indexPathForSelectedRow!.row
-        let destination = segue.destination as! WeaponDetailViewController
+        let destination = segue.destination as! DetailController
         
-        destination.imageName = weapons[row].image
+        destination.weapon = weapons[row]
     }
 
 

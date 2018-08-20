@@ -15,6 +15,8 @@
 		3B45B5B121293925005CA594 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45B5B021293925005CA594 /* CardCell.swift */; };
 		3B45B5B321293E11005CA594 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45B5B221293E11005CA594 /* UIViewHelper.swift */; };
 		3B6BE5C0212A480C00453B31 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BE5BF212A480C00453B31 /* Weapon.swift */; };
+		3B6BE5C2212A555800453B31 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BE5C1212A555800453B31 /* DetailController.swift */; };
+		3B6BE5C4212A566100453B31 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6BE5C3212A566100453B31 /* DetailCell.swift */; };
 		3BCAC3202129D35900C15E13 /* WeaponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAC31F2129D35900C15E13 /* WeaponDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		3B45B5B021293925005CA594 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		3B45B5B221293E11005CA594 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
 		3B6BE5BF212A480C00453B31 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		3B6BE5C1212A555800453B31 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		3B6BE5C3212A566100453B31 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		3BCAC31F2129D35900C15E13 /* WeaponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +68,8 @@
 			children = (
 				3B45B59C21293154005CA594 /* AppDelegate.swift */,
 				3B45B5A021293154005CA594 /* Main.storyboard */,
+				3B6BE5C3212A566100453B31 /* DetailCell.swift */,
+				3B6BE5C1212A555800453B31 /* DetailController.swift */,
 				3B6BE5BF212A480C00453B31 /* Weapon.swift */,
 				3BCAC31F2129D35900C15E13 /* WeaponDetailViewController.swift */,
 				3B45B5B221293E11005CA594 /* UIViewHelper.swift */,
@@ -148,10 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B45B5AF212931E1005CA594 /* WeaponsTableViewController.swift in Sources */,
+				3B6BE5C2212A555800453B31 /* DetailController.swift in Sources */,
 				3B45B59D21293154005CA594 /* AppDelegate.swift in Sources */,
 				3BCAC3202129D35900C15E13 /* WeaponDetailViewController.swift in Sources */,
 				3B45B5B321293E11005CA594 /* UIViewHelper.swift in Sources */,
 				3B45B5B121293925005CA594 /* CardCell.swift in Sources */,
+				3B6BE5C4212A566100453B31 /* DetailCell.swift in Sources */,
 				3B6BE5C0212A480C00453B31 /* Weapon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,12 +305,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F968HGSK43;
 				INFOPLIST_FILE = Weapons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.runtofuture.Weapons;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.runtofuture.Weapons99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -314,12 +323,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F968HGSK43;
 				INFOPLIST_FILE = Weapons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.runtofuture.Weapons;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.runtofuture.Weapons99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
