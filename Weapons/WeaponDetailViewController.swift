@@ -20,7 +20,7 @@ class WeaponDetailViewController: UIViewController {
         
         headerImageView.image = UIImage(named: imageName)
         
-        // Do any additional setup after loading the view.
+        let a = 34
     }
 
     override func didReceiveMemoryWarning() {
