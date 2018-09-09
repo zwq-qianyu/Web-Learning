@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController{
+class ConversionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var celsiusLabel: UILabel!
     @IBOutlet var textField: UITextField!
     
@@ -59,4 +59,27 @@ class ConversionViewController: UIViewController{
         nf.maximumFractionDigits = 1  // 最多只能有以为小数
         return nf
     }()
+    
+    
+    // 实现 textField 只接收一个小数点，无法输入两个小数点
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        print(NSCharacterSet.letters)
+        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        let replacementTextHasDecimalSeparator = string.range(of: ".")
+//        let replacementTextHasLetter = string.range(of: )
+        
+        /*
+         下面这种情况，不能同时出现 2 个 1
+         let existingTextHasDecimalSeparator = textField.text?.range(of: "1")
+         let replacementTextHasDecimalSeparator = string.range(of: "1")
+         */
+        if (existingTextHasDecimalSeparator != nil) && (replacementTextHasDecimalSeparator != nil) {
+            print("false")
+            return false
+        }
+        else{
+            print("true")
+            return true
+        }
+    }
 }
