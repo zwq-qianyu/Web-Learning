@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B25C00B2148B0F600AFEA7B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B25C00A2148B0F600AFEA7B /* MapKit.framework */; };
+		3B25C00D2148B65E00AFEA7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25C00C2148B65E00AFEA7B /* MapViewController.swift */; };
+		3B25C00F2148E71B00AFEA7B /* MySiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25C00E2148E71B00AFEA7B /* MySiteViewController.swift */; };
+		3B25C0112148E89300AFEA7B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B25C0102148E89300AFEA7B /* WebKit.framework */; };
 		3BDEB41B2144FB79008CE3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEB41A2144FB79008CE3A2 /* AppDelegate.swift */; };
 		3BDEB4202144FB79008CE3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDEB41E2144FB79008CE3A2 /* Main.storyboard */; };
 		3BDEB4222144FB7A008CE3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDEB4212144FB7A008CE3A2 /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B25C00A2148B0F600AFEA7B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3B25C00C2148B65E00AFEA7B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3B25C00E2148E71B00AFEA7B /* MySiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySiteViewController.swift; sourceTree = "<group>"; };
+		3B25C0102148E89300AFEA7B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3BDEB4172144FB79008CE3A2 /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDEB41A2144FB79008CE3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BDEB41F2144FB79008CE3A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B25C0112148E89300AFEA7B /* WebKit.framework in Frameworks */,
+				3B25C00B2148B0F600AFEA7B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B25C0092148B0F500AFEA7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B25C0102148E89300AFEA7B /* WebKit.framework */,
+				3B25C00A2148B0F600AFEA7B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3BDEB40E2144FB79008CE3A2 = {
 			isa = PBXGroup;
 			children = (
 				3BDEB4192144FB79008CE3A2 /* WorldTrotter */,
 				3BDEB4182144FB79008CE3A2 /* Products */,
+				3B25C0092148B0F500AFEA7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,7 +76,9 @@
 			children = (
 				3BDEB41A2144FB79008CE3A2 /* AppDelegate.swift */,
 				3BDEB42C21452B94008CE3A2 /* ConversionViewController.swift */,
+				3B25C00C2148B65E00AFEA7B /* MapViewController.swift */,
 				3BDEB41E2144FB79008CE3A2 /* Main.storyboard */,
+				3B25C00E2148E71B00AFEA7B /* MySiteViewController.swift */,
 				3BDEB4212144FB7A008CE3A2 /* Assets.xcassets */,
 				3BDEB4232144FB7A008CE3A2 /* LaunchScreen.storyboard */,
 				3BDEB4262144FB7A008CE3A2 /* Info.plist */,
@@ -136,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDEB42D21452B94008CE3A2 /* ConversionViewController.swift in Sources */,
+				3B25C00D2148B65E00AFEA7B /* MapViewController.swift in Sources */,
 				3BDEB41B2144FB79008CE3A2 /* AppDelegate.swift in Sources */,
+				3B25C00F2148E71B00AFEA7B /* MySiteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

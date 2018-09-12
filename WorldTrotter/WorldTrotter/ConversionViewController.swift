@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ConversionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var celsiusLabel: UILabel!
@@ -74,12 +75,38 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
          let replacementTextHasDecimalSeparator = string.range(of: "1")
          */
         if (existingTextHasDecimalSeparator != nil) && (replacementTextHasDecimalSeparator != nil) {
-            print("false")
+//            print("false")
             return false
         }
         else{
-            print("true")
+//            print("true")
             return true
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("ConversionViewController loaded its view.")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let time: Date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: time)
+        if let hour = components.hour {
+            let hour = Int(hour)
+            print(hour)
+            if hour >= 22 || hour <= 7 {
+                print("夜间模式")
+                view.backgroundColor = UIColor.gray
+            }
+            else{
+                print("明亮模式")
+            }
+        }
+        else{
+            print("获取时间失败")
         }
     }
 }
