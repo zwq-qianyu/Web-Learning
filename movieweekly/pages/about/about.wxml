@@ -1,0 +1,14 @@
+<view class='container'>
+  <image class='head_image' src='/images/yichen.jpg'></image>
+  <text style='font-weight: bold; font-size: 60rpx;'>电影周周看</text>
+  <view>
+    <text>我</text>
+    <navigator class='nav' hover-class='nav-hover' style='display: inline-block' url='/pages/weekly/weekly' open-type='switchTab'>每周推荐</navigator> 
+    <text>一部好片</text>
+  </view>
+  <text>我的个人网站：www.runtofuture.cn</text>
+  <!-- <view>
+    <text>我的个人网站：</text>
+    <navigator style='display: inline-block' url='https://www.runtofuture.cn'>www.runtofuture.cn</navigator>
+  </view> -->
+</view>

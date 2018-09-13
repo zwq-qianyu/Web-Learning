@@ -1,0 +1,14 @@
+.head_image {
+  width: 375rpx;
+  height: 375rpx;
+  border-radius: 50%;
+}
+
+.nav {
+  color: blue;
+}
+
+.nav-hover {
+  color: red;
+}
+
