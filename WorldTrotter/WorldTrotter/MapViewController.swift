@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
                     action: #selector(MapViewController.mapTypeChanged(_:)),
                     for: .valueChanged)
         
-        // 动态拉伸视图尺寸---关闭
+        // 动态拉伸视图尺寸（autoresizingMask）---关闭
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
         

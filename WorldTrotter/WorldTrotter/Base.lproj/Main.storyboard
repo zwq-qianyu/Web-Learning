@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cwf-6U-a0I">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,35 +15,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-I9-YZD">
-                                <rect key="frame" x="39.666666666666657" y="144" width="296" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1s-PI-7nU">
-                                <rect key="frame" x="130.66666666666666" y="195" width="114" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1s-PI-7nU">
+                                <rect key="frame" x="130.5" y="171" width="114" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz7-jS-3BY">
-                                <rect key="frame" x="129" y="246" width="117" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz7-jS-3BY">
+                                <rect key="frame" x="129.5" y="222" width="116.5" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiJ-hb-OlB">
-                                <rect key="frame" x="64.666666666666686" y="338" width="246" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiJ-hb-OlB">
+                                <rect key="frame" x="65" y="314" width="245.5" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jG6-6f-489">
-                                <rect key="frame" x="62.666666666666657" y="52" width="249.99999999999997" height="84"/>
+                                <rect key="frame" x="62.5" y="28" width="250" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="dRu-qF-5mF"/>
                                 </constraints>
@@ -55,18 +49,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ct4-VT-4nd"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-I9-YZD">
+                                <rect key="frame" x="40" y="120" width="295.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="m1s-PI-7nU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0OD-c4-1Fa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jhZ-I9-YZD" secondAttribute="trailing" id="9KW-Q5-v09"/>
                             <constraint firstItem="m1s-PI-7nU" firstAttribute="centerX" secondItem="jG6-6f-489" secondAttribute="centerX" id="9KY-p1-2ib"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GiJ-hb-OlB" secondAttribute="trailing" id="EbP-df-RlS"/>
                             <constraint firstItem="GiJ-hb-OlB" firstAttribute="centerX" secondItem="jG6-6f-489" secondAttribute="centerX" id="FRn-GW-BCq"/>
                             <constraint firstItem="jhZ-I9-YZD" firstAttribute="centerX" secondItem="jG6-6f-489" secondAttribute="centerX" id="Jql-dC-UMv"/>
                             <constraint firstItem="jG6-6f-489" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="KNQ-uA-3uU"/>
                             <constraint firstItem="jhZ-I9-YZD" firstAttribute="top" secondItem="jG6-6f-489" secondAttribute="bottom" constant="8" id="Q4D-tg-0Ze"/>
+                            <constraint firstItem="GiJ-hb-OlB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QPU-DF-cPI"/>
+                            <constraint firstItem="Nz7-jS-3BY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T0g-hO-Dhz"/>
                             <constraint firstItem="GiJ-hb-OlB" firstAttribute="top" secondItem="Nz7-jS-3BY" secondAttribute="bottom" constant="8" id="UJT-dI-JKa"/>
                             <constraint firstItem="jG6-6f-489" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VUb-0i-llp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jG6-6f-489" secondAttribute="trailing" id="WUe-1Z-PZ0"/>
                             <constraint firstItem="m1s-PI-7nU" firstAttribute="top" secondItem="jhZ-I9-YZD" secondAttribute="bottom" constant="8" id="bEF-AV-d2b"/>
                             <constraint firstItem="Nz7-jS-3BY" firstAttribute="top" secondItem="m1s-PI-7nU" secondAttribute="bottom" constant="8" id="dye-OQ-0ZF"/>
+                            <constraint firstItem="jhZ-I9-YZD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ePs-xw-aUA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m1s-PI-7nU" secondAttribute="trailing" id="phb-5N-4BF"/>
+                            <constraint firstItem="jG6-6f-489" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sGU-0g-b60"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nz7-jS-3BY" secondAttribute="trailing" id="xB1-Ld-Sn5"/>
                             <constraint firstItem="Nz7-jS-3BY" firstAttribute="centerX" secondItem="jG6-6f-489" secondAttribute="centerX" id="xrB-dj-tmN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,10 +109,10 @@
         <!--Map-->
         <scene sceneID="8lV-ie-EmM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fZk-pn-u4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="f3f-1U-68y" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="ulT-73-NvO"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZk-pn-u4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1895" y="678"/>
         </scene>

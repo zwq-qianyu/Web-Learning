@@ -40,8 +40,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func fahrenHeitFieldEdittingChanged(textField: UITextField){
         // 根据填的值修改 fahrenHeitValues 的值
-        if let text = textField.text, let value = Double(text){
-            fahrenHeitValues = value
+        if let text = textField.text, let number = numberFormatter.number(from: text){
+            fahrenHeitValues = number.doubleValue
         }
         else{
             fahrenHeitValues = nil
@@ -64,9 +64,12 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     // 实现 textField 只接收一个小数点，无法输入两个小数点
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentLocal = NSLocale.current
+        let decimalSeparator = currentLocal.decimalSeparator ?? "."
+        
 //        print(NSCharacterSet.letters)
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeparator)
 //        let replacementTextHasLetter = string.range(of: )
         
         /*
