@@ -11,6 +11,7 @@
 		3B25C00D2148B65E00AFEA7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25C00C2148B65E00AFEA7B /* MapViewController.swift */; };
 		3B25C00F2148E71B00AFEA7B /* MySiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25C00E2148E71B00AFEA7B /* MySiteViewController.swift */; };
 		3B25C0112148E89300AFEA7B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B25C0102148E89300AFEA7B /* WebKit.framework */; };
+		3BD8178C215A121C00A17AD9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3BD8178E215A121C00A17AD9 /* Localizable.strings */; };
 		3BDEB41B2144FB79008CE3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEB41A2144FB79008CE3A2 /* AppDelegate.swift */; };
 		3BDEB4202144FB79008CE3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDEB41E2144FB79008CE3A2 /* Main.storyboard */; };
 		3BDEB4222144FB7A008CE3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDEB4212144FB7A008CE3A2 /* Assets.xcassets */; };
@@ -23,6 +24,12 @@
 		3B25C00C2148B65E00AFEA7B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3B25C00E2148E71B00AFEA7B /* MySiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySiteViewController.swift; sourceTree = "<group>"; };
 		3B25C0102148E89300AFEA7B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		3BD81788215A07BC00A17AD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3BD81789215A09A100A17AD9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		3BD8178D215A121C00A17AD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3BD8178F215A121F00A17AD9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3BD81790215A13B300A17AD9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		3BD81791215A13B400A17AD9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3BDEB4172144FB79008CE3A2 /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDEB41A2144FB79008CE3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BDEB41F2144FB79008CE3A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +84,7 @@
 				3BDEB41A2144FB79008CE3A2 /* AppDelegate.swift */,
 				3BDEB42C21452B94008CE3A2 /* ConversionViewController.swift */,
 				3B25C00C2148B65E00AFEA7B /* MapViewController.swift */,
+				3BD8178E215A121C00A17AD9 /* Localizable.strings */,
 				3BDEB41E2144FB79008CE3A2 /* Main.storyboard */,
 				3B25C00E2148E71B00AFEA7B /* MySiteViewController.swift */,
 				3BDEB4212144FB7A008CE3A2 /* Assets.xcassets */,
@@ -118,6 +126,7 @@
 				TargetAttributes = {
 					3BDEB4162144FB79008CE3A2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -128,6 +137,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				"zh-Hans",
 			);
 			mainGroup = 3BDEB40E2144FB79008CE3A2;
 			productRefGroup = 3BDEB4182144FB79008CE3A2 /* Products */;
@@ -145,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDEB4252144FB7A008CE3A2 /* LaunchScreen.storyboard in Resources */,
+				3BD8178C215A121C00A17AD9 /* Localizable.strings in Resources */,
 				3BDEB4222144FB7A008CE3A2 /* Assets.xcassets in Resources */,
 				3BDEB4202144FB79008CE3A2 /* Main.storyboard in Resources */,
 			);
@@ -167,10 +179,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3BD8178E215A121C00A17AD9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BD8178D215A121C00A17AD9 /* en */,
+				3BD8178F215A121F00A17AD9 /* es */,
+				3BD81791215A13B400A17AD9 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3BDEB41E2144FB79008CE3A2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3BDEB41F2144FB79008CE3A2 /* Base */,
+				3BD81788215A07BC00A17AD9 /* en */,
+				3BD81789215A09A100A17AD9 /* es */,
+				3BD81790215A13B300A17AD9 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -190,6 +215,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -250,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -313,7 +340,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.runtofuture.WorldTrotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -331,7 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.runtofuture.WorldTrotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
