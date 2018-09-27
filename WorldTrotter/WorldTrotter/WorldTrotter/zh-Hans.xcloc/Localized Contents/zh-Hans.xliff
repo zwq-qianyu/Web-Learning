@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="WorldTrotter/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.0" build-num="10A255"/>
+    </header>
+    <body>
+      <trans-unit id="GiJ-hb-OlB.text">
+        <source>degrees Celsius</source>
+        <target>摄氏度</target>
+        <note>Class = "UILabel"; text = "degrees Celsius"; ObjectID = "GiJ-hb-OlB";</note>
+      </trans-unit>
+      <trans-unit id="JNQ-5Z-9Ii.title">
+        <source>Convert</source>
+        <target>温度转换</target>
+        <note>Class = "UITabBarItem"; title = "Convert"; ObjectID = "JNQ-5Z-9Ii";</note>
+      </trans-unit>
+      <trans-unit id="Nz7-jS-3BY.text">
+        <source>100</source>
+        <target>100</target>
+        <note>Class = "UILabel"; text = "100"; ObjectID = "Nz7-jS-3BY";</note>
+      </trans-unit>
+      <trans-unit id="jG6-6f-489.placeholder">
+        <source>value</source>
+        <target>值</target>
+        <note>Class = "UITextField"; placeholder = "value"; ObjectID = "jG6-6f-489";</note>
+      </trans-unit>
+      <trans-unit id="jhZ-I9-YZD.text">
+        <source>degrees Fahrenheit</source>
+        <target>华氏度</target>
+        <note>Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "jhZ-I9-YZD";</note>
+      </trans-unit>
+      <trans-unit id="m1s-PI-7nU.text">
+        <source>is really</source>
+        <target>相当于</target>
+        <note>Class = "UILabel"; text = "is really"; ObjectID = "m1s-PI-7nU";</note>
+      </trans-unit>
+      <trans-unit id="ubM-Ch-yVZ.title">
+        <source>MySite</source>
+        <target>我的网站</target>
+        <note>Class = "UITabBarItem"; title = "MySite"; ObjectID = "ubM-Ch-yVZ";</note>
+      </trans-unit>
+      <trans-unit id="ulT-73-NvO.title">
+        <source>Map</source>
+        <target>地图</target>
+        <note>Class = "UITabBarItem"; title = "Map"; ObjectID = "ulT-73-NvO";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="WorldTrotter/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.0" build-num="10A255"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="WorldTrotter/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="zh-Hans">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.0" build-num="10A255"/>
+    </header>
+    <body>
+      <trans-unit id="Hybrid">
+        <source>Hybrid</source>
+        <target>鸟瞰图</target>
+        <note>Hybrid map view</note>
+      </trans-unit>
+      <trans-unit id="Satellite">
+        <source>Satellite</source>
+        <target>卫星图</target>
+        <note>Satellite map view</note>
+      </trans-unit>
+      <trans-unit id="Standard">
+        <source>Standard</source>
+        <target>标准图</target>
+        <note>Stadard map view</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
