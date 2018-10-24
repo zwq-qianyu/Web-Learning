@@ -48,25 +48,6 @@ Page({
     })
     this.getNow();
   },
-
-  onShow() {
-    console.log('onShow')
-    wx.getSetting({
-      success: res=> {
-        let auth = res.authSetting['scope.userLocation']
-        // console.log(auth)
-        if (auth && this.data.locationAuthType != AUTHORIZED){
-          // 权限从无到有
-          // console.log("权限从无到有")
-          this.setData({
-            locationTipsText: AUTHORIZED_TIPS,
-            locationAuthType: AUTHORIZED
-          })
-          this.getLocation()
-        }
-      }
-    })
-  },
   
   onPullDownRefresh() {
     this.getNow(() => {
@@ -142,7 +123,14 @@ onTapDayWeather() {
 
 onTapLocation() {
   if (this.data.locationAuthType === UNAUTHORIZED)
-    wx.openSetting()
+    wx.openSetting({
+      success: res => {
+        let auth = res.authSetting['scope.userLocation']
+        if (auth) {
+          this.getLocation()
+        }
+      }
+    })
   else
     this.getLocation()
 },
