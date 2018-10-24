@@ -39,6 +39,7 @@ Page({
     // 实例化API核心类
     this.qqmapsdk = new QQMapWX({
       key: 'EAXBZ-33R3X-AA64F-7FIPQ-BY27J-5UF5B'
+      // key: 'JEQBZ-BME6U-ZXVV6-BSQBA-2XVO2-QFBXR'
     })
     wx.getSetting({
       success: res => {
@@ -126,7 +127,7 @@ setToday(result) {
 },
 
 onTapDayWeather() {
-  wx.showToast();
+  // wx.showToast();
   wx.navigateTo({
     url: '/pages/list/list?city=' + this.data.city,
   })
@@ -145,33 +146,34 @@ onTapLocation() {
   else
     this.getCityAndWeather()
 },
+
   getCityAndWeather(){
-  wx.getLocation({
-    success: res=>{
-      // console.log(AUTHORIZED)
-      this.setData({
-        locationAuthType: AUTHORIZED,
-      })
-      this.qqmapsdk.reverseGeocoder({
-        location: {
-          latitude: res.latitude,
-          longitude: res.longitude
-        },
-        success: res=>{
-          let city = res.result.address_component.city
-          this.setData({
-            city: city,
-          })
-          this.getNow()
-        }
-      })
-    },
-    fail: ()=>{
-      // console.log(UNAUTHORIZED)
-      this.setData({
-        locationAuthType: UNAUTHORIZED,
-      })
-    },
+    wx.getLocation({
+      success: res=>{
+        // console.log(AUTHORIZED)
+        this.setData({
+          locationAuthType: AUTHORIZED,
+        })
+        this.qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: res=>{
+            let city = res.result.address_component.city
+            this.setData({
+              city: city,
+            })
+            this.getNow()
+          }
+        })
+      },
+      fail: ()=>{
+        // console.log(UNAUTHORIZED)
+        this.setData({
+          locationAuthType: UNAUTHORIZED,
+        })
+      },
   })
 }
 
