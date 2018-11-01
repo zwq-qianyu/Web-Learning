@@ -1,5 +1,6 @@
 package cn.runtofuture.www.activityskip;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,26 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class C extends AppCompatActivity {
+    private static TextView mLifestyleTextC;
 
-    private TextView mLifestyleTextC;
+    public TextView getLifestyleTextC() {
+        return mLifestyleTextC;
+    }
+
+    public static void setLifestyleTextC(String str) {
+        mLifestyleTextC.setText(str);
+    }
+
+
+
+    public TextView getStatusTextC() {
+        return mStatusTextC;
+    }
+
+    public void setStatusTextC(TextView statusTextC) {
+        mStatusTextC = statusTextC;
+    }
+
     private TextView mStatusTextC;
     int offset = A.getOffset();
 
@@ -21,15 +40,11 @@ public class C extends AppCompatActivity {
     private static final int REQUEST_CODE_B = 2;
     private static final int REQUEST_CODE_C = 3;
 
-    protected static final String GET_LIFE_CYCLE = "cn.runtofuture.www.activityskip.lifecycle_info";
     protected static final String GET_STATUS = "cn.runtofuture.www.activityskip.status_info";
-    protected static final String SEND_LIFE_CYCLE = "cn.runtofuture.www.activityskip.lifecycle_info";
     protected static final String SEND_STATUS = "cn.runtofuture.www.activityskip.status_info";
-    protected static final String SEND_LIFE_CYCLE_ADD = "cn.runtofuture.www.activityskip.lifecycle_info_add";
     protected static final String SEND_STATUS_ADD = "cn.runtofuture.www.activityskip.status_info_add";
-    protected static final String GET_LIFE_CYCLE_ADD = "cn.runtofuture.www.activityskip.lifecycle_info_add";
     protected static final String GET_STATUS_ADD = "cn.runtofuture.www.activityskip.status_info_add";
-    protected static final String FINISHED = "cn.runtofuture.www.activityskip.finished";
+    protected static final String LIFI_CYCLE = "cn.runtofuture.www.activityskip.life_cycle";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +60,12 @@ public class C extends AppCompatActivity {
 
         // 将intent中存放的记录先放入显示框中
         Intent m = getIntent();
-        String get  = m.getStringExtra(GET_LIFE_CYCLE);
+        String get  = m.getStringExtra(GET_STATUS);
         if(get != null){
-            mLifestyleTextC.append(m.getStringExtra(GET_LIFE_CYCLE));
             mStatusTextC.append(m.getStringExtra(GET_STATUS));
         }
-
-        mLifestyleTextC.append("Activity C.onCreate()\n");
+        Data.appendLifeCycleData("Activity C.onCreate()\n");
+//        mLifestyleTextC.append("Activity C.onCreate()\n");
 
     }
 
@@ -60,7 +74,8 @@ public class C extends AppCompatActivity {
         super.onStart();
         mLifestyleTextC = (TextView)findViewById(R.id.lifestyle_text_c);
         mStatusTextC = (TextView)findViewById(R.id.status_text_c);
-        mLifestyleTextC.append("Activity C.onStart()\n");
+        Data.appendLifeCycleData("Activity C.onStart()\n");
+//        mLifestyleTextC.append("Activity C.onStart()\n");
         Log.d("TEST", "C - >>> onStart");
     }
 
@@ -69,9 +84,10 @@ public class C extends AppCompatActivity {
         super.onResume();
         mLifestyleTextC = (TextView)findViewById(R.id.lifestyle_text_c);
         mStatusTextC = (TextView)findViewById(R.id.status_text_c);
-        mLifestyleTextC.append("Activity C.onResume()\n");
+        Data.appendLifeCycleData("Activity C.onResume()\n");
+//        mLifestyleTextC.append("Activity C.onResume()\n");
         try{
-            mLifestyleTextC.append(getIntent().getStringExtra(GET_LIFE_CYCLE_ADD));
+            mLifestyleTextC.setText(Data.getLifeCycleData());
         }catch(Exception e){
             System.out.println(e);
         }
@@ -89,9 +105,6 @@ public class C extends AppCompatActivity {
 
         // 设置结果值
         Intent data = new Intent();
-        data.putExtra(SEND_LIFE_CYCLE, mLifestyleTextC.getText().toString() + "Activity C.onPause()\n");
-        data.putExtra(SEND_STATUS,mStatusTextC.getText().toString());
-        data.putExtra(SEND_LIFE_CYCLE_ADD, "Activity C.onStop()\nActivity C.onDestroy()\n");
         setResult(RESULT_OK, data);
 
         // 点击跳转至 A
@@ -100,11 +113,8 @@ public class C extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("TEST", "A ------ >>> onClick");
                 Intent intent = new Intent(C.this, A.class);
-                intent.putExtra(SEND_LIFE_CYCLE, mLifestyleTextC.getText().toString() + "Activity C.onPause()\n");
                 intent.putExtra(SEND_STATUS,mStatusTextC.getText().toString());
-                intent.putExtra(SEND_LIFE_CYCLE_ADD, "Activity C.onStop()\n");
                 intent.putExtra(SEND_STATUS_ADD, "Activity C: Stoped\n");
-//                startActivity(intent);
                 startActivityForResult(intent, REQUEST_CODE_A);
             }
         });
@@ -115,11 +125,8 @@ public class C extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("TEST", "B ------ >>> onClick");
                 Intent intent = new Intent(C.this, B.class);
-                intent.putExtra(SEND_LIFE_CYCLE, mLifestyleTextC.getText().toString() + "Activity C.onPause()\n");
                 intent.putExtra(SEND_STATUS,mStatusTextC.getText().toString());
-                intent.putExtra(SEND_LIFE_CYCLE_ADD, "Activity C.onStop()\n");
                 intent.putExtra(SEND_STATUS_ADD, "Activity C: Stoped\n");
-//                startActivity(intent);
                 startActivityForResult(intent, REQUEST_CODE_B);
             }
         });
@@ -130,8 +137,6 @@ public class C extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("TEST", "C ------ >>> finish click");
                 offset += 5 * mLifestyleTextC.getLineHeight();
-                Log.d("TEST offset", String.valueOf(offset));
-                Log.d("TEST finish", String.valueOf(mLifestyleTextC.getLineHeight()));
                 finish();
             }
         });
@@ -141,7 +146,7 @@ public class C extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(C.this, ActivityDialog.class);
-                startActivity(intent);
+                startActivityForResult(intent,4);
             }
         });
     }
@@ -150,7 +155,6 @@ public class C extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         refreshLogView("Activity C.onPause()\n");
-//        mLifestyleTextC.append("Activity C.onPause()\n");
         mStatusTextC.setText("Activity C: paused\n");
         Log.d("TEST", "C - >>> onPause");
     }
@@ -159,10 +163,21 @@ public class C extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         refreshLogView("Activity C.onStop()\n");
-//        mLifestyleTextC.append("Activity C.onStop()\n");
-//        mStatusTextC.append("C: Stoped\n");
-//        offset -= 3 * mLifestyleTextC.getLineHeight();
-//        Log.d("TEST STOP", String.valueOf(mLifestyleTextC.getLineHeight()));
+        try{
+            A.setLifestyleTextA(Data.getLifeCycleData());
+        }catch(Exception e){
+
+        }
+        try{
+            B.setLifecycleTextB(Data.getLifeCycleData());
+        }catch(Exception e){
+
+        }
+        try{
+            C.setLifestyleTextC(Data.getLifeCycleData());
+        }catch(Exception e){
+
+        }
         Log.d("TEST", "C - >>> onStop");
     }
 
@@ -170,7 +185,21 @@ public class C extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         refreshLogView("Activity C.onDestroy()\n");
-//        mLifestyleTextC.append("Activity C.onDestroy()\n");
+        try{
+            A.setLifestyleTextA(Data.getLifeCycleData());
+        }catch(Exception e){
+
+        }
+        try{
+            B.setLifecycleTextB(Data.getLifeCycleData());
+        }catch(Exception e){
+
+        }
+        try{
+            C.setLifestyleTextC(Data.getLifeCycleData());
+        }catch(Exception e){
+
+        }
         Log.d("TEST", "C - >>> onDestroy");
     }
 
@@ -187,16 +216,21 @@ public class C extends AppCompatActivity {
         if (data == null) {
             return;
         }
-        mLifestyleTextC.setText(data.getStringExtra(GET_LIFE_CYCLE));
-        mStatusTextC.setText(data.getStringExtra(GET_STATUS));
+        switch (requestCode){
+            case 1:
+                mStatusTextC.setText(data.getStringExtra(A.SEND_STATUS)+"Activity C:Resumed");
+                break;
+            case 2:
+                mStatusTextC.setText(data.getStringExtra(B.SEND_STATUS)+"Activity C:Resumed");
+                break;
+        }
     }
 
     void refreshLogView(String msg){
-        mLifestyleTextC.append(msg);
+        Data.appendLifeCycleData(msg);
+//        mLifestyleTextC.append(msg);
         offset=(mLifestyleTextC.getLineCount() - 3) * mLifestyleTextC.getLineHeight();
         A.setOffset(offset);
-        Log.d("TEST offset", String.valueOf(offset));
-        Log.d("TEST getHeight", String.valueOf(mLifestyleTextC.getLineHeight()));
         if(offset>mLifestyleTextC.getHeight()){
             mLifestyleTextC.scrollTo(0,offset-mLifestyleTextC.getHeight());
         }
