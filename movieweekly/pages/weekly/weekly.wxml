@@ -1,0 +1,14 @@
+<view class=''>
+  <swiper class='movie-swiper' indicator-dots='{{true}}' previous-margin='50rpx' next-margin='50rpx' current='{{currentIndex}}'>
+    <swiper-item class="movie" wx:for="{{weeklyMovieList}}" wx:key="id">
+      <view class='container movie-card' bindtap='f1' data-movie-id="{{item.id}}">
+        <image class='movie_image' src='{{item.imagePath}}'></image>
+        <text>第{{index + 1}}周：{{item.name}}</text> 
+        <text class='movie-detail'>点评：{{item.comment}}</text>
+        <text wx:if="{{item.isHighlyRecommended}}" style="font-size: 20; color: red;">强烈推荐</text>
+
+        <text class="return-button" catchtap='f0' wx:if="{{index < (weeklyMovieList.length - 1)}}">返回本周</text>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,35 @@
+.movie {
+  display: flex;
+}
+
+.movie_image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.movie-swiper {
+  height: 90vh;
+}
+
+.movie-card {
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  margin: 0 20rpx;
+  position: relative;
+}
+
+.return-button {
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  font-size: 15px;
+  border: 1px solid cyan;
+  background-color: white;
+}
+
+.movie-detail {
+  font-size: 15px;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
