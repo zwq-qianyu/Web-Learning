@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/colorCyan"
+    android:orientation="vertical"
+    tools:context=".A">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_a_head"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="30dp"/>
+
+    <!--button group-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_b"
+            android:id="@+id/start_b"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_c"
+            android:id="@+id/start_c"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/finish_a"
+            android:id="@+id/finish_a"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog"
+            android:id="@+id/dialog"/>
+    </LinearLayout>
+
+    <!-- lifecycle method list -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lifecycle"
+            android:textSize="30dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/lifecycle_text_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="120dp"
+            android:background="@color/colorWhite"
+            android:layout_margin="10dp"
+            android:fadeScrollbars="false"
+            android:scrollbars="vertical"/>
+    </LinearLayout>
+
+    <!-- activity status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textSize="30dp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/status_text_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="80dp"
+            android:background="@color/colorWhite"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

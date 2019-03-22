@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ActivitySkip</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <string name="activity_a_head">Activity A</string>
+    <string name="activity_b_head">Activity B</string>
+    <string name="activity_c_head">Activity C</string>
+    <string name="start_a">Start A</string>
+    <string name="start_b">Start B</string>
+    <string name="start_c">Start C</string>
+    <string name="dialog">Dialog</string>
+    <string name="finish_a">Finish A</string>
+    <string name="finish_b">Finish B</string>
+    <string name="finish_c">Finish C</string>
+    <string name="lifecycle">Lifecycle Method List</string>
+    <string name="status">Activity Status</string>
+    <string name="simple_dialog">Hello World!</string>
+    <string name="close">Close</string>
+</resources>
