@@ -1,0 +1,15 @@
+<canvas id="demoCanvas" width="500" height="600"></canvas>
+<script type="text/javascript">
+    //通过id获得当前的Canvas对象
+    var canvasDom = document.getElementById("demoCanvas");
+    //通过Canvas Dom对象获取Context的对象
+    var context = canvasDom.getContext("2d");
+    var image = new Image();//创建一张图片
+    image.src = "a.jpg";//设置图片的路径
+    image.onload = function() {//当图片加载完成后
+     for (var i = 0; i < 10; i++) {//输出10张照片
+            //参数：（1）绘制的图片  （2）坐标x，（3）坐标y
+            context.drawImage(image, 100 + i * 80, 100 + i * 80);
+        }
+    };
+</script>

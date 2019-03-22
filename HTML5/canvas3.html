@@ -1,0 +1,20 @@
+<!-- #utf-8 -->
+
+<canvas id="demoCanvas" width="500" height="600"></canvas>
+<script type="text/javascript">
+    //通过id获得当前的Canvas对象
+    var canvasDom = document.getElementById("demoCanvas");
+    //通过Canvas Dom对象获取Context的对象
+    var context = canvasDom.getContext("2d");
+    context.moveTo(200,200);
+    // 设置字体
+    context.font = "Bold 50px Arial";
+    // 设置对齐方式
+    context.textAlign = "left";
+    // 设置填充颜色
+    context.fillStyle = "#005600";
+    // 设置字体内容，以及在画布上的位置
+    context.fillText("老马!", 10, 50);
+    // 绘制空心字
+    context.strokeText("blog.itjeek.com!", 10, 100);
+</script>
